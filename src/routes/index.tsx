@@ -424,7 +424,7 @@ function Index() {
             <Reveal delay={120}>
               <form
                 onSubmit={(e) => e.preventDefault()}
-                className="space-y-4 rounded-lg border border-border bg-surface p-6"
+                className="card-surface space-y-5 p-7 hover:translate-y-0"
               >
                 {[
                   { id: "name", label: "Name", type: "text" },
