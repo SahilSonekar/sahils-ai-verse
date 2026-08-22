@@ -77,13 +77,6 @@ const PROJECTS = [
     tech: ["Django REST Framework", "Vue.js", "Pinia", "PostgreSQL", "Docker"],
     repo: "https://github.com/SahilSonekar/Frenzo",
   },
-  {
-    name: "Zombie Survival Game",
-    blurb:
-      "A 2D top-down zombie survival game built from scratch in Python. Features FSM-based zombie AI (patrol, chase, attack, search), A* pathfinding, vision cones and hearing-based detection, a day/night cycle, and JSON save/load. A systems and algorithms focused project.",
-    tech: ["Python", "Pygame-CE", "Tiled", "JSON"],
-    repo: null,
-  },
 ];
 
 function Index() {
