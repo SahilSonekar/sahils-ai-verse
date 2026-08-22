@@ -254,45 +254,44 @@ function Index() {
       </section>
 
       {/* PROJECTS */}
-      <section id="projects" className="px-6 py-20">
+      <section id="projects" className="border-t border-border/60 px-6 py-24 sm:py-28">
         <div className="mx-auto max-w-6xl">
           <Reveal>
             <SectionHeading index="03" title="Projects" />
           </Reveal>
-          <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+          <div className="grid gap-6 md:grid-cols-2">
             {PROJECTS.map((p, i) => (
               <Reveal key={p.name} delay={i * 90} as="article" className="h-full">
-                <div className="flex h-full flex-col rounded-lg border border-border bg-surface p-6 transition-all hover:-translate-y-1 hover:border-primary/40">
-                  <h3 className="text-lg font-bold">{p.name}</h3>
-                  <p className="mt-3 flex-1 text-sm leading-relaxed text-muted-foreground">
+                <div className="card-surface group flex h-full flex-col p-7 sm:p-8">
+                  <div className="flex items-center justify-between gap-4">
+                    <h3 className="text-xl font-bold sm:text-2xl">{p.name}</h3>
+                    <span className="font-mono text-[11px] text-muted-foreground/70">
+                      0{i + 1}
+                    </span>
+                  </div>
+                  <p className="mt-4 flex-1 text-sm leading-relaxed text-muted-foreground">
                     {p.blurb}
                   </p>
-                  <div className="mt-5 flex flex-wrap gap-1.5">
+                  <div className="mt-6 flex flex-wrap gap-2">
                     {p.tech.map((t) => (
                       <span
                         key={t}
-                        className="rounded border border-border bg-surface-elevated px-2 py-0.5 font-mono text-[11px] text-muted-foreground"
+                        className="rounded-full border border-border bg-surface-elevated px-2.5 py-1 font-mono text-[11px] text-muted-foreground transition-colors group-hover:text-foreground/80"
                       >
                         {t}
                       </span>
                     ))}
                   </div>
-                  <div className="mt-6">
-                    {p.repo ? (
-                      <a
-                        href={p.repo}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="inline-flex items-center gap-2 rounded-md border border-border px-3.5 py-2 text-xs font-medium transition-colors hover:border-primary/60 hover:text-primary"
-                      >
-                        <Github className="h-3.5 w-3.5" /> View on GitHub
-                        <ExternalLink className="h-3 w-3" />
-                      </a>
-                    ) : (
-                      <span className="inline-flex items-center gap-2 rounded-md border border-dashed border-border px-3.5 py-2 text-xs text-muted-foreground">
-                        <Github className="h-3.5 w-3.5" /> Repo coming soon
-                      </span>
-                    )}
+                  <div className="mt-7">
+                    <a
+                      href={p.repo}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="inline-flex items-center gap-2 rounded-full border border-border px-4 py-2.5 text-xs font-medium transition-all duration-300 hover:border-primary/60 hover:bg-accent-soft hover:text-primary"
+                    >
+                      <Github className="h-3.5 w-3.5" /> View on GitHub
+                      <ExternalLink className="h-3 w-3" />
+                    </a>
                   </div>
                 </div>
               </Reveal>
