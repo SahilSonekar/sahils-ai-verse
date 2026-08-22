@@ -125,7 +125,7 @@ function Index() {
               </a>
               <a
                 href="#"
-                className="inline-flex items-center gap-2 rounded-md border border-border px-5 py-2.5 text-sm font-medium text-foreground transition-colors hover:border-primary/50 hover:bg-surface"
+                className="inline-flex items-center gap-2 rounded-full border border-border bg-surface/40 px-6 py-3 text-sm font-medium text-foreground backdrop-blur transition-all duration-300 hover:-translate-y-0.5 hover:border-primary/50 hover:text-primary"
               >
                 <FileText className="h-4 w-4" /> Resume
               </a>
