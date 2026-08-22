@@ -380,7 +380,7 @@ function Index() {
       </section>
 
       {/* CONTACT */}
-      <section id="contact" className="px-6 py-20">
+      <section id="contact" className="aurora border-t border-border/60 px-6 py-24 sm:py-28">
         <div className="mx-auto max-w-6xl">
           <Reveal>
             <SectionHeading index="06" title="Let's Connect" />
