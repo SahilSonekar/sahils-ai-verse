@@ -459,7 +459,7 @@ function Index() {
                 </div>
                 <button
                   type="submit"
-                  className="w-full rounded-md border border-primary/50 bg-accent-soft px-4 py-2.5 text-sm font-medium text-primary transition-colors hover:bg-primary hover:text-primary-foreground"
+                  className="w-full rounded-full border border-primary/50 bg-accent-soft px-4 py-3 text-sm font-semibold text-primary transition-all duration-300 hover:bg-primary hover:text-primary-foreground"
                 >
                   Send message
                 </button>
