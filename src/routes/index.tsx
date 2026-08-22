@@ -46,10 +46,14 @@ export const Route = createFileRoute("/")({
 
 function SectionHeading({ index, title }: { index: string; title: string }) {
   return (
-    <div className="mb-10 flex items-baseline gap-4">
-      <span className="font-mono text-xs text-primary">{index}</span>
-      <h2 className="text-2xl font-bold sm:text-3xl">{title}</h2>
-      <span className="h-px flex-1 bg-border" />
+    <div className="mb-12">
+      <span className="font-mono text-[11px] tracking-[0.25em] text-primary/80 uppercase">
+        {index}
+      </span>
+      <div className="mt-3 flex items-center gap-5">
+        <h2 className="text-gradient text-3xl font-bold sm:text-4xl">{title}</h2>
+        <span className="rule-gradient h-px flex-1" />
+      </div>
     </div>
   );
 }
