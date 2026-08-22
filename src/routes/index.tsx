@@ -46,10 +46,14 @@ export const Route = createFileRoute("/")({
 
 function SectionHeading({ index, title }: { index: string; title: string }) {
   return (
-    <div className="mb-10 flex items-baseline gap-4">
-      <span className="font-mono text-xs text-primary">{index}</span>
-      <h2 className="text-2xl font-bold sm:text-3xl">{title}</h2>
-      <span className="h-px flex-1 bg-border" />
+    <div className="mb-12">
+      <span className="font-mono text-[11px] tracking-[0.25em] text-primary/80 uppercase">
+        {index}
+      </span>
+      <div className="mt-3 flex items-center gap-5">
+        <h2 className="text-gradient text-3xl font-bold sm:text-4xl">{title}</h2>
+        <span className="rule-gradient h-px flex-1" />
+      </div>
     </div>
   );
 }
@@ -77,13 +81,6 @@ const PROJECTS = [
     tech: ["Django REST Framework", "Vue.js", "Pinia", "PostgreSQL", "Docker"],
     repo: "https://github.com/SahilSonekar/Frenzo",
   },
-  {
-    name: "Zombie Survival Game",
-    blurb:
-      "A 2D top-down zombie survival game built from scratch in Python. Features FSM-based zombie AI (patrol, chase, attack, search), A* pathfinding, vision cones and hearing-based detection, a day/night cycle, and JSON save/load. A systems and algorithms focused project.",
-    tech: ["Python", "Pygame-CE", "Tiled", "JSON"],
-    repo: null,
-  },
 ];
 
 function Index() {
@@ -92,7 +89,7 @@ function Index() {
       <Nav />
 
       {/* HERO */}
-      <section className="relative overflow-hidden px-6 pt-36 pb-24 sm:pt-44 sm:pb-32">
+      <section className="aurora relative overflow-hidden px-6 pt-40 pb-28 sm:pt-48 sm:pb-36">
         <div className="grid-backdrop pointer-events-none absolute inset-0" aria-hidden="true" />
         <div className="relative mx-auto max-w-6xl">
           <Reveal>
@@ -101,7 +98,7 @@ function Index() {
             </p>
           </Reveal>
           <Reveal delay={80}>
-            <h1 className="mt-5 text-4xl leading-[1.05] font-bold sm:text-6xl lg:text-7xl">
+            <h1 className="text-gradient mt-6 text-5xl leading-[1.02] font-bold tracking-[-0.035em] sm:text-7xl lg:text-8xl">
               Sahil Sonekar
             </h1>
           </Reveal>
@@ -121,20 +118,20 @@ function Index() {
             <div className="mt-9 flex flex-wrap gap-3">
               <a
                 href="#projects"
-                className="group inline-flex items-center gap-2 rounded-md bg-primary px-5 py-2.5 text-sm font-medium text-primary-foreground transition-all hover:brightness-110"
+                className="group glow-primary inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground transition-all duration-300 hover:-translate-y-0.5 hover:brightness-110"
               >
                 View Projects
                 <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
               </a>
               <a
                 href="#"
-                className="inline-flex items-center gap-2 rounded-md border border-border px-5 py-2.5 text-sm font-medium text-foreground transition-colors hover:border-primary/50 hover:bg-surface"
+                className="inline-flex items-center gap-2 rounded-full border border-border bg-surface/40 px-6 py-3 text-sm font-medium text-foreground backdrop-blur transition-all duration-300 hover:-translate-y-0.5 hover:border-primary/50 hover:text-primary"
               >
                 <FileText className="h-4 w-4" /> Resume
               </a>
               <a
                 href="#contact"
-                className="inline-flex items-center gap-2 rounded-md px-5 py-2.5 text-sm font-medium text-muted-foreground transition-colors hover:text-primary"
+                className="inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-medium text-muted-foreground transition-colors duration-300 hover:text-primary"
               >
                 Contact Me
               </a>
@@ -153,7 +150,7 @@ function Index() {
                   target={href.startsWith("http") ? "_blank" : undefined}
                   rel="noreferrer"
                   aria-label={label}
-                  className="rounded-md border border-border bg-surface/60 p-2.5 text-muted-foreground transition-all hover:-translate-y-0.5 hover:border-primary/50 hover:text-primary"
+                  className="rounded-full border border-border bg-surface/60 p-3 text-muted-foreground transition-all duration-300 hover:-translate-y-1 hover:border-primary/50 hover:bg-accent-soft hover:text-primary"
                 >
                   <Icon className="h-4.5 w-4.5" />
                 </a>
@@ -164,7 +161,7 @@ function Index() {
       </section>
 
       {/* ABOUT */}
-      <section id="about" className="px-6 py-20">
+      <section id="about" className="border-t border-border/60 px-6 py-24 sm:py-28">
         <div className="mx-auto max-w-6xl">
           <Reveal>
             <SectionHeading index="01" title="About" />
@@ -206,7 +203,7 @@ function Index() {
                 ].map((e) => (
                   <li
                     key={e.school}
-                    className="rounded-lg border border-border bg-surface p-5 transition-colors hover:border-primary/40"
+                    className="card-surface p-6"
                   >
                     <div className="flex items-start gap-3">
                       <GraduationCap className="mt-0.5 h-4.5 w-4.5 shrink-0 text-primary" />
@@ -225,27 +222,26 @@ function Index() {
       </section>
 
       {/* SKILLS */}
-      <section id="skills" className="px-6 py-20">
+      <section id="skills" className="border-t border-border/60 px-6 py-24 sm:py-28">
         <div className="mx-auto max-w-6xl">
           <Reveal>
             <SectionHeading index="02" title="Skills" />
           </Reveal>
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {SKILLS.map((group, i) => (
               <Reveal key={group.label} delay={i * 70}>
-                <div className="h-full rounded-lg border border-border bg-surface p-5 transition-all hover:-translate-y-0.5 hover:border-primary/40">
-                  <div className="flex items-center gap-2">
-                    <group.icon className="h-4 w-4 text-primary" />
-                    <h3 className="font-mono text-xs tracking-widest text-muted-foreground uppercase">
+                <div className="card-surface group h-full p-6">
+                  <div className="flex items-center gap-2.5">
+                    <span className="rounded-lg border border-border bg-accent-soft p-1.5 text-primary transition-transform duration-300 group-hover:scale-105">
+                      <group.icon className="h-3.5 w-3.5" />
+                    </span>
+                    <h3 className="font-mono text-[11px] tracking-[0.2em] text-muted-foreground uppercase">
                       {group.label}
                     </h3>
                   </div>
-                  <div className="mt-4 flex flex-wrap gap-2">
+                  <div className="mt-5 flex flex-wrap gap-2">
                     {group.items.map((item) => (
-                      <span
-                        key={item}
-                        className="rounded-md border border-border bg-surface-elevated px-2.5 py-1 text-xs text-foreground/90 transition-colors hover:border-primary/50 hover:text-primary"
-                      >
+                      <span key={item} className="pill px-3 py-1.5 text-xs text-foreground/90">
                         {item}
                       </span>
                     ))}
@@ -258,45 +254,44 @@ function Index() {
       </section>
 
       {/* PROJECTS */}
-      <section id="projects" className="px-6 py-20">
+      <section id="projects" className="border-t border-border/60 px-6 py-24 sm:py-28">
         <div className="mx-auto max-w-6xl">
           <Reveal>
             <SectionHeading index="03" title="Projects" />
           </Reveal>
-          <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+          <div className="grid gap-6 md:grid-cols-2">
             {PROJECTS.map((p, i) => (
               <Reveal key={p.name} delay={i * 90} as="article" className="h-full">
-                <div className="flex h-full flex-col rounded-lg border border-border bg-surface p-6 transition-all hover:-translate-y-1 hover:border-primary/40">
-                  <h3 className="text-lg font-bold">{p.name}</h3>
-                  <p className="mt-3 flex-1 text-sm leading-relaxed text-muted-foreground">
+                <div className="card-surface group flex h-full flex-col p-7 sm:p-8">
+                  <div className="flex items-center justify-between gap-4">
+                    <h3 className="text-xl font-bold sm:text-2xl">{p.name}</h3>
+                    <span className="font-mono text-[11px] text-muted-foreground/70">
+                      0{i + 1}
+                    </span>
+                  </div>
+                  <p className="mt-4 flex-1 text-sm leading-relaxed text-muted-foreground">
                     {p.blurb}
                   </p>
-                  <div className="mt-5 flex flex-wrap gap-1.5">
+                  <div className="mt-6 flex flex-wrap gap-2">
                     {p.tech.map((t) => (
                       <span
                         key={t}
-                        className="rounded border border-border bg-surface-elevated px-2 py-0.5 font-mono text-[11px] text-muted-foreground"
+                        className="rounded-full border border-border bg-surface-elevated px-2.5 py-1 font-mono text-[11px] text-muted-foreground transition-colors group-hover:text-foreground/80"
                       >
                         {t}
                       </span>
                     ))}
                   </div>
-                  <div className="mt-6">
-                    {p.repo ? (
-                      <a
-                        href={p.repo}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="inline-flex items-center gap-2 rounded-md border border-border px-3.5 py-2 text-xs font-medium transition-colors hover:border-primary/60 hover:text-primary"
-                      >
-                        <Github className="h-3.5 w-3.5" /> View on GitHub
-                        <ExternalLink className="h-3 w-3" />
-                      </a>
-                    ) : (
-                      <span className="inline-flex items-center gap-2 rounded-md border border-dashed border-border px-3.5 py-2 text-xs text-muted-foreground">
-                        <Github className="h-3.5 w-3.5" /> Repo coming soon
-                      </span>
-                    )}
+                  <div className="mt-7">
+                    <a
+                      href={p.repo}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="inline-flex items-center gap-2 rounded-full border border-border px-4 py-2.5 text-xs font-medium transition-all duration-300 hover:border-primary/60 hover:bg-accent-soft hover:text-primary"
+                    >
+                      <Github className="h-3.5 w-3.5" /> View on GitHub
+                      <ExternalLink className="h-3 w-3" />
+                    </a>
                   </div>
                 </div>
               </Reveal>
@@ -306,12 +301,12 @@ function Index() {
       </section>
 
       {/* LEADERSHIP */}
-      <section id="leadership" className="px-6 py-20">
+      <section id="leadership" className="border-t border-border/60 px-6 py-24 sm:py-28">
         <div className="mx-auto max-w-6xl">
           <Reveal>
             <SectionHeading index="04" title="Leadership" />
           </Reveal>
-          <ol className="relative space-y-6 border-l border-border pl-6">
+          <ol className="relative space-y-8 border-l border-border pl-8">
             {[
               {
                 role: "Founder & Captain, Junior FC",
@@ -323,10 +318,14 @@ function Index() {
                   "Coordinated team strategy and led the team to victory in an inter-college tournament.",
               },
             ].map((l, i) => (
-              <Reveal key={l.role} delay={i * 90} as="li" className="relative">
-                <span className="absolute top-2 -left-[31px] h-2.5 w-2.5 rounded-full bg-primary" />
-                <p className="font-semibold">{l.role}</p>
-                <p className="mt-1.5 text-sm text-muted-foreground">{l.detail}</p>
+              <Reveal key={l.role} delay={i * 90} as="li" className="group relative">
+                <span className="absolute top-2 -left-[37px] h-2.5 w-2.5 rounded-full bg-primary ring-4 ring-primary/15 transition-all duration-300 group-hover:ring-8" />
+                <p className="text-lg font-semibold transition-colors duration-300 group-hover:text-primary">
+                  {l.role}
+                </p>
+                <p className="mt-2 max-w-xl text-sm leading-relaxed text-muted-foreground">
+                  {l.detail}
+                </p>
               </Reveal>
             ))}
           </ol>
@@ -334,7 +333,7 @@ function Index() {
       </section>
 
       {/* ACHIEVEMENTS */}
-      <section className="px-6 py-20">
+      <section className="border-t border-border/60 px-6 py-24 sm:py-28">
         <div className="mx-auto max-w-6xl">
           <Reveal>
             <SectionHeading index="05" title="Achievements & Certifications" />
@@ -356,10 +355,12 @@ function Index() {
               },
             ].map((block, i) => (
               <Reveal key={block.title} delay={i * 90}>
-                <div className="h-full rounded-lg border border-border bg-surface p-6">
-                  <div className="flex items-center gap-2">
-                    <block.icon className="h-4 w-4 text-primary" />
-                    <h3 className="font-mono text-xs tracking-widest text-muted-foreground uppercase">
+                <div className="card-surface h-full p-7">
+                  <div className="flex items-center gap-2.5">
+                    <span className="rounded-lg border border-border bg-accent-soft p-1.5 text-primary">
+                      <block.icon className="h-3.5 w-3.5" />
+                    </span>
+                    <h3 className="font-mono text-[11px] tracking-[0.2em] text-muted-foreground uppercase">
                       {block.title}
                     </h3>
                   </div>
@@ -379,7 +380,7 @@ function Index() {
       </section>
 
       {/* CONTACT */}
-      <section id="contact" className="px-6 py-20">
+      <section id="contact" className="aurora border-t border-border/60 px-6 py-24 sm:py-28">
         <div className="mx-auto max-w-6xl">
           <Reveal>
             <SectionHeading index="06" title="Let's Connect" />
@@ -391,10 +392,10 @@ function Index() {
                   Open to internships, freelance work, and collaborating on anything that mixes
                   solid backend engineering with AI. The fastest way to reach me is email.
                 </p>
-                <div className="mt-7 flex flex-col gap-3 sm:max-w-xs">
+                <div className="mt-8 flex flex-col gap-3 sm:max-w-sm">
                   <a
                     href={`mailto:${EMAIL}`}
-                    className="inline-flex items-center gap-2 rounded-md bg-primary px-4 py-2.5 text-sm font-medium text-primary-foreground transition-all hover:brightness-110"
+                    className="glow-primary inline-flex items-center gap-2 rounded-full bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground transition-all duration-300 hover:-translate-y-0.5 hover:brightness-110"
                   >
                     <Mail className="h-4 w-4" /> {EMAIL}
                   </a>
@@ -403,7 +404,7 @@ function Index() {
                       href={GITHUB}
                       target="_blank"
                       rel="noreferrer"
-                      className="inline-flex flex-1 items-center justify-center gap-2 rounded-md border border-border px-4 py-2.5 text-sm transition-colors hover:border-primary/50 hover:text-primary"
+                      className="inline-flex flex-1 items-center justify-center gap-2 rounded-full border border-border bg-surface/50 px-4 py-3 text-sm backdrop-blur transition-all duration-300 hover:-translate-y-0.5 hover:border-primary/50 hover:text-primary"
                     >
                       <Github className="h-4 w-4" /> GitHub
                     </a>
@@ -411,7 +412,7 @@ function Index() {
                       href={LINKEDIN}
                       target="_blank"
                       rel="noreferrer"
-                      className="inline-flex flex-1 items-center justify-center gap-2 rounded-md border border-border px-4 py-2.5 text-sm transition-colors hover:border-primary/50 hover:text-primary"
+                      className="inline-flex flex-1 items-center justify-center gap-2 rounded-full border border-border bg-surface/50 px-4 py-3 text-sm backdrop-blur transition-all duration-300 hover:-translate-y-0.5 hover:border-primary/50 hover:text-primary"
                     >
                       <Linkedin className="h-4 w-4" /> LinkedIn
                     </a>
@@ -423,7 +424,7 @@ function Index() {
             <Reveal delay={120}>
               <form
                 onSubmit={(e) => e.preventDefault()}
-                className="space-y-4 rounded-lg border border-border bg-surface p-6"
+                className="card-surface space-y-5 p-7 hover:translate-y-0"
               >
                 {[
                   { id: "name", label: "Name", type: "text" },
@@ -458,7 +459,7 @@ function Index() {
                 </div>
                 <button
                   type="submit"
-                  className="w-full rounded-md border border-primary/50 bg-accent-soft px-4 py-2.5 text-sm font-medium text-primary transition-colors hover:bg-primary hover:text-primary-foreground"
+                  className="w-full rounded-full border border-primary/50 bg-accent-soft px-4 py-3 text-sm font-semibold text-primary transition-all duration-300 hover:bg-primary hover:text-primary-foreground"
                 >
                   Send message
                 </button>
