@@ -21,6 +21,7 @@ import { Reveal } from "@/components/portfolio/Reveal";
 const EMAIL = "sahilsonekar@example.com";
 const GITHUB = "https://github.com/SahilSonekar";
 const LINKEDIN = "https://www.linkedin.com/in/sahil-sonekar-837a7725b/";
+const SCORECARD_URL = "https://drive.google.com/file/d/1hu0qES14_hCWrrHcUACSwcUcVUPKP1_4/view?usp=sharing";
 
 export const Route = createFileRoute("/")({
   head: () => ({
