@@ -355,10 +355,12 @@ function Index() {
               },
             ].map((block, i) => (
               <Reveal key={block.title} delay={i * 90}>
-                <div className="h-full rounded-lg border border-border bg-surface p-6">
-                  <div className="flex items-center gap-2">
-                    <block.icon className="h-4 w-4 text-primary" />
-                    <h3 className="font-mono text-xs tracking-widest text-muted-foreground uppercase">
+                <div className="card-surface h-full p-7">
+                  <div className="flex items-center gap-2.5">
+                    <span className="rounded-lg border border-border bg-accent-soft p-1.5 text-primary">
+                      <block.icon className="h-3.5 w-3.5" />
+                    </span>
+                    <h3 className="font-mono text-[11px] tracking-[0.2em] text-muted-foreground uppercase">
                       {block.title}
                     </h3>
                   </div>
