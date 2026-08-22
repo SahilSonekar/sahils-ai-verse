@@ -98,7 +98,7 @@ function Index() {
             </p>
           </Reveal>
           <Reveal delay={80}>
-            <h1 className="mt-5 text-4xl leading-[1.05] font-bold sm:text-6xl lg:text-7xl">
+            <h1 className="text-gradient mt-6 text-5xl leading-[1.02] font-bold tracking-[-0.035em] sm:text-7xl lg:text-8xl">
               Sahil Sonekar
             </h1>
           </Reveal>
