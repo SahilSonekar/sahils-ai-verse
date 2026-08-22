@@ -89,7 +89,7 @@ function Index() {
       <Nav />
 
       {/* HERO */}
-      <section className="relative overflow-hidden px-6 pt-36 pb-24 sm:pt-44 sm:pb-32">
+      <section className="aurora relative overflow-hidden px-6 pt-40 pb-28 sm:pt-48 sm:pb-36">
         <div className="grid-backdrop pointer-events-none absolute inset-0" aria-hidden="true" />
         <div className="relative mx-auto max-w-6xl">
           <Reveal>
