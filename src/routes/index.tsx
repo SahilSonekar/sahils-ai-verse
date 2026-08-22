@@ -222,27 +222,26 @@ function Index() {
       </section>
 
       {/* SKILLS */}
-      <section id="skills" className="px-6 py-20">
+      <section id="skills" className="border-t border-border/60 px-6 py-24 sm:py-28">
         <div className="mx-auto max-w-6xl">
           <Reveal>
             <SectionHeading index="02" title="Skills" />
           </Reveal>
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {SKILLS.map((group, i) => (
               <Reveal key={group.label} delay={i * 70}>
-                <div className="h-full rounded-lg border border-border bg-surface p-5 transition-all hover:-translate-y-0.5 hover:border-primary/40">
-                  <div className="flex items-center gap-2">
-                    <group.icon className="h-4 w-4 text-primary" />
-                    <h3 className="font-mono text-xs tracking-widest text-muted-foreground uppercase">
+                <div className="card-surface group h-full p-6">
+                  <div className="flex items-center gap-2.5">
+                    <span className="rounded-lg border border-border bg-accent-soft p-1.5 text-primary transition-transform duration-300 group-hover:scale-105">
+                      <group.icon className="h-3.5 w-3.5" />
+                    </span>
+                    <h3 className="font-mono text-[11px] tracking-[0.2em] text-muted-foreground uppercase">
                       {group.label}
                     </h3>
                   </div>
-                  <div className="mt-4 flex flex-wrap gap-2">
+                  <div className="mt-5 flex flex-wrap gap-2">
                     {group.items.map((item) => (
-                      <span
-                        key={item}
-                        className="rounded-md border border-border bg-surface-elevated px-2.5 py-1 text-xs text-foreground/90 transition-colors hover:border-primary/50 hover:text-primary"
-                      >
+                      <span key={item} className="pill px-3 py-1.5 text-xs text-foreground/90">
                         {item}
                       </span>
                     ))}
