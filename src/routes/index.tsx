@@ -131,7 +131,7 @@ function Index() {
               </a>
               <a
                 href="#contact"
-                className="inline-flex items-center gap-2 rounded-md px-5 py-2.5 text-sm font-medium text-muted-foreground transition-colors hover:text-primary"
+                className="inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-medium text-muted-foreground transition-colors duration-300 hover:text-primary"
               >
                 Contact Me
               </a>
