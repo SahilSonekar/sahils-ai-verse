@@ -345,7 +345,13 @@ function Index() {
                 title: "Achievements",
                 icon: Trophy,
                 items: [
-                  "MAH MCA CET 2025 — 98.92 percentile (state-level entrance exam)",
+                  {
+                    text: "MAH MCA CET 2025 — 98.92 percentile (state-level entrance exam)",
+                    link: {
+                      href: SCORECARD_URL,
+                      label: "View scorecard",
+                    },
+                  },
                   "Inter-College Football Tournament Champions (as team captain)",
                 ],
               },
@@ -366,12 +372,30 @@ function Index() {
                     </h3>
                   </div>
                   <ul className="mt-4 space-y-3">
-                    {block.items.map((item) => (
-                      <li key={item} className="flex gap-3 text-sm text-foreground/90">
-                        <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-primary" />
-                        {item}
-                      </li>
-                    ))}
+                    {block.items.map((item) => {
+                      const { text, link } =
+                        typeof item === "string" ? { text: item, link: undefined } : item;
+                      return (
+                        <li key={text} className="flex gap-3 text-sm text-foreground/90">
+                          <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-primary" />
+                          <span className="flex-1">
+                            {text}
+                            {link && (
+                              <a
+                                href={link.href}
+                                target="_blank"
+                                rel="noreferrer"
+                                className="mt-2 inline-flex items-center gap-1.5 rounded-full border border-border bg-accent-soft px-2.5 py-1 text-[11px] font-medium text-primary transition-all duration-300 hover:-translate-y-0.5 hover:border-primary/60"
+                              >
+                                <FileText className="h-3 w-3" />
+                                {link.label}
+                                <ExternalLink className="h-2.5 w-2.5" />
+                              </a>
+                            )}
+                          </span>
+                        </li>
+                      );
+                    })}
                   </ul>
                 </div>
               </Reveal>
