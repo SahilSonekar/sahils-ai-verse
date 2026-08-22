@@ -150,7 +150,7 @@ function Index() {
                   target={href.startsWith("http") ? "_blank" : undefined}
                   rel="noreferrer"
                   aria-label={label}
-                  className="rounded-md border border-border bg-surface/60 p-2.5 text-muted-foreground transition-all hover:-translate-y-0.5 hover:border-primary/50 hover:text-primary"
+                  className="rounded-full border border-border bg-surface/60 p-3 text-muted-foreground transition-all duration-300 hover:-translate-y-1 hover:border-primary/50 hover:bg-accent-soft hover:text-primary"
                 >
                   <Icon className="h-4.5 w-4.5" />
                 </a>
