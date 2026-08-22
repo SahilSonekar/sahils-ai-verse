@@ -131,6 +131,75 @@
   mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, black 20%, transparent 75%);
 }
 
+@utility aurora {
+  background:
+    radial-gradient(60rem 32rem at 12% -10%, oklch(0.78 0.13 185 / 16%), transparent 65%),
+    radial-gradient(52rem 28rem at 92% 8%, oklch(0.62 0.15 255 / 14%), transparent 62%);
+}
+
+@utility text-gradient {
+  background: linear-gradient(
+    120deg,
+    var(--foreground) 0%,
+    var(--foreground) 42%,
+    oklch(0.86 0.11 185) 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+@utility rule-gradient {
+  background: linear-gradient(to right, oklch(0.78 0.13 185 / 45%), oklch(1 0 0 / 6%) 40%, transparent);
+}
+
+@utility card-surface {
+  position: relative;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-xl);
+  background:
+    linear-gradient(160deg, oklch(1 0 0 / 3.5%), transparent 45%),
+    var(--surface);
+  transition:
+    transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 0.35s ease,
+    box-shadow 0.35s ease,
+    background-color 0.35s ease;
+
+  &:hover {
+    transform: translateY(-4px);
+    border-color: oklch(0.78 0.13 185 / 38%);
+    box-shadow:
+      0 1px 0 0 oklch(1 0 0 / 6%) inset,
+      0 18px 40px -22px oklch(0.78 0.13 185 / 45%),
+      0 24px 60px -40px oklch(0 0 0 / 80%);
+  }
+}
+
+@utility pill {
+  border: 1px solid var(--border);
+  border-radius: 9999px;
+  background: var(--surface-elevated);
+  transition:
+    color 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.25s ease,
+    background-color 0.25s ease;
+
+  &:hover {
+    color: var(--primary);
+    border-color: oklch(0.78 0.13 185 / 45%);
+    background: var(--accent-soft);
+    transform: translateY(-1px);
+  }
+}
+
+@utility glow-primary {
+  box-shadow:
+    0 10px 30px -12px oklch(0.78 0.13 185 / 55%),
+    0 1px 0 0 oklch(1 0 0 / 20%) inset;
+}
+
 @utility reveal {
   opacity: 0;
   transform: translateY(18px);
