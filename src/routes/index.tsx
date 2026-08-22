@@ -333,7 +333,7 @@ function Index() {
       </section>
 
       {/* ACHIEVEMENTS */}
-      <section className="px-6 py-20">
+      <section className="border-t border-border/60 px-6 py-24 sm:py-28">
         <div className="mx-auto max-w-6xl">
           <Reveal>
             <SectionHeading index="05" title="Achievements & Certifications" />
