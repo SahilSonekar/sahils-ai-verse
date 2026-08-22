@@ -392,10 +392,10 @@ function Index() {
                   Open to internships, freelance work, and collaborating on anything that mixes
                   solid backend engineering with AI. The fastest way to reach me is email.
                 </p>
-                <div className="mt-7 flex flex-col gap-3 sm:max-w-xs">
+                <div className="mt-8 flex flex-col gap-3 sm:max-w-sm">
                   <a
                     href={`mailto:${EMAIL}`}
-                    className="inline-flex items-center gap-2 rounded-md bg-primary px-4 py-2.5 text-sm font-medium text-primary-foreground transition-all hover:brightness-110"
+                    className="glow-primary inline-flex items-center gap-2 rounded-full bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground transition-all duration-300 hover:-translate-y-0.5 hover:brightness-110"
                   >
                     <Mail className="h-4 w-4" /> {EMAIL}
                   </a>
@@ -404,7 +404,7 @@ function Index() {
                       href={GITHUB}
                       target="_blank"
                       rel="noreferrer"
-                      className="inline-flex flex-1 items-center justify-center gap-2 rounded-md border border-border px-4 py-2.5 text-sm transition-colors hover:border-primary/50 hover:text-primary"
+                      className="inline-flex flex-1 items-center justify-center gap-2 rounded-full border border-border bg-surface/50 px-4 py-3 text-sm backdrop-blur transition-all duration-300 hover:-translate-y-0.5 hover:border-primary/50 hover:text-primary"
                     >
                       <Github className="h-4 w-4" /> GitHub
                     </a>
@@ -412,7 +412,7 @@ function Index() {
                       href={LINKEDIN}
                       target="_blank"
                       rel="noreferrer"
-                      className="inline-flex flex-1 items-center justify-center gap-2 rounded-md border border-border px-4 py-2.5 text-sm transition-colors hover:border-primary/50 hover:text-primary"
+                      className="inline-flex flex-1 items-center justify-center gap-2 rounded-full border border-border bg-surface/50 px-4 py-3 text-sm backdrop-blur transition-all duration-300 hover:-translate-y-0.5 hover:border-primary/50 hover:text-primary"
                     >
                       <Linkedin className="h-4 w-4" /> LinkedIn
                     </a>
