@@ -301,12 +301,12 @@ function Index() {
       </section>
 
       {/* LEADERSHIP */}
-      <section id="leadership" className="px-6 py-20">
+      <section id="leadership" className="border-t border-border/60 px-6 py-24 sm:py-28">
         <div className="mx-auto max-w-6xl">
           <Reveal>
             <SectionHeading index="04" title="Leadership" />
           </Reveal>
-          <ol className="relative space-y-6 border-l border-border pl-6">
+          <ol className="relative space-y-8 border-l border-border pl-8">
             {[
               {
                 role: "Founder & Captain, Junior FC",
@@ -318,10 +318,14 @@ function Index() {
                   "Coordinated team strategy and led the team to victory in an inter-college tournament.",
               },
             ].map((l, i) => (
-              <Reveal key={l.role} delay={i * 90} as="li" className="relative">
-                <span className="absolute top-2 -left-[31px] h-2.5 w-2.5 rounded-full bg-primary" />
-                <p className="font-semibold">{l.role}</p>
-                <p className="mt-1.5 text-sm text-muted-foreground">{l.detail}</p>
+              <Reveal key={l.role} delay={i * 90} as="li" className="group relative">
+                <span className="absolute top-2 -left-[37px] h-2.5 w-2.5 rounded-full bg-primary ring-4 ring-primary/15 transition-all duration-300 group-hover:ring-8" />
+                <p className="text-lg font-semibold transition-colors duration-300 group-hover:text-primary">
+                  {l.role}
+                </p>
+                <p className="mt-2 max-w-xl text-sm leading-relaxed text-muted-foreground">
+                  {l.detail}
+                </p>
               </Reveal>
             ))}
           </ol>
