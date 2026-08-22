@@ -203,7 +203,7 @@ function Index() {
                 ].map((e) => (
                   <li
                     key={e.school}
-                    className="rounded-lg border border-border bg-surface p-5 transition-colors hover:border-primary/40"
+                    className="card-surface p-6"
                   >
                     <div className="flex items-start gap-3">
                       <GraduationCap className="mt-0.5 h-4.5 w-4.5 shrink-0 text-primary" />
